@@ -5,7 +5,7 @@ resource "random_string" "db_password" {
 }
 
 resource "azurerm_postgresql_server" "gophersearch" {
-  name                = "pgsql-${data.terraform_remote_state.infra.resource_group_name}"
+  name                = "pgsql-gophersearch"
   location            = "${data.terraform_remote_state.infra.resource_group_location}"
   resource_group_name = "${data.terraform_remote_state.infra.resource_group_name}"
 
