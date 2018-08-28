@@ -38,7 +38,7 @@ resource "azurerm_postgresql_firewall_rule" "gophersearch" {
 }
 
 resource "azurerm_postgresql_database" "gophersearch" {
-  name                = "gophersearch"
+  name                = "${var.db_name}"
   resource_group_name = "${data.terraform_remote_state.infra.resource_group_name}"
 
   server_name = "${azurerm_postgresql_server.gophersearch.name}"
